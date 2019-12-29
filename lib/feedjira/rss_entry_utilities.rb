@@ -35,7 +35,7 @@ module Feedjira
     end
 
     def entry_id
-      @entry_id && @entry_id.guid
+      @entry_id && @entry_id.respond_to?(:guid) ? @entry_id.guid : @entry_id
     end
 
     def url
